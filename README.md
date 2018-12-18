@@ -1,2 +1,2 @@
-# -Robotic-Arm
+# Robotic-Arm
 Computer vision project 
