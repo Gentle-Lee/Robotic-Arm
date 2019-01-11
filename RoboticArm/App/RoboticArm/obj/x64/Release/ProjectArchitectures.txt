@@ -1,0 +1,2 @@
+C:\Users\Tommy\Desktop\Github\Robotic-Arm\RoboticArm\App\GeneratedProjects\UWP\Assembly-CSharp\Assembly-CSharp.csproj;x64
+C:\Users\Tommy\Desktop\Github\Robotic-Arm\RoboticArm\App\RoboticArm\RoboticArm.csproj;x64
