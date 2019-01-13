@@ -141,7 +141,6 @@ namespace Academy
 
             if (!IsNavigationFocused)
             {
-                Debug.Log("navigation not focused");
                 scrollDetectedGameObject.SetActive(false);
                 zoomDetectedGameObject.SetActive(false);
                 return;
