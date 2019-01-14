@@ -649,6 +649,13 @@
     <Compile Include="Assets\Scripts\PostMessage.cs" />
     <Compile Include="Assets\Scripts\Register.cs" />
     <Compile Include="Assets\Scripts\TagalongAction.cs" />
+    <Compile Include="Assets\SimpleHTTP\Client.cs" />
+    <Compile Include="Assets\SimpleHTTP\Examples\Main.cs" />
+    <Compile Include="Assets\SimpleHTTP\Examples\Post.cs" />
+    <Compile Include="Assets\SimpleHTTP\FormData.cs" />
+    <Compile Include="Assets\SimpleHTTP\Request.cs" />
+    <Compile Include="Assets\SimpleHTTP\RequestBody.cs" />
+    <Compile Include="Assets\SimpleHTTP\Response.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\BlinnPhongConfigurable.cginc" />

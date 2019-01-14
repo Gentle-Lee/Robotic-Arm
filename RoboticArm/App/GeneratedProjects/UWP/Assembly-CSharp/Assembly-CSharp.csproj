@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4a69334c-7a44-4f11-910b-3ff86a10773e}</ProjectGuid>
+    <ProjectGuid>{4906fb0c-566e-4ec6-8f50-3d548b8c4cf1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AssemblyCSharpWSA</RootNamespace>
@@ -1439,6 +1439,27 @@
     </Compile>
     <Compile Include="$(UnityProjectDir)Assets\Scripts\TagalongAction.cs">
       <Link>Scripts\TagalongAction.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\SimpleHTTP\Client.cs">
+      <Link>SimpleHTTP\Client.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\SimpleHTTP\Examples\Main.cs">
+      <Link>SimpleHTTP\Examples\Main.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\SimpleHTTP\Examples\Post.cs">
+      <Link>SimpleHTTP\Examples\Post.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\SimpleHTTP\FormData.cs">
+      <Link>SimpleHTTP\FormData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\SimpleHTTP\Request.cs">
+      <Link>SimpleHTTP\Request.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\SimpleHTTP\RequestBody.cs">
+      <Link>SimpleHTTP\RequestBody.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\SimpleHTTP\Response.cs">
+      <Link>SimpleHTTP\Response.cs</Link>
     </Compile>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

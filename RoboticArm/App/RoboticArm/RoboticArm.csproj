@@ -357,7 +357,7 @@
 
   <ItemGroup>
     <ProjectReference Include="C:\Users\Tommy\Desktop\Github\Robotic-Arm\RoboticArm\App\GeneratedProjects\UWP\Assembly-CSharp\Assembly-CSharp.csproj">
-      <Project>{4a69334c-7a44-4f11-910b-3ff86a10773e}</Project>
+      <Project>{4906fb0c-566e-4ec6-8f50-3d548b8c4cf1}</Project>
       <Name>Assembly-CSharp</Name>
       <Private>False</Private>
     </ProjectReference>

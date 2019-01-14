@@ -10,7 +10,7 @@ GeneratedProjects\UWP\Assembly-CSharp\project.json: 1D02BC64BAC0D041019673A1C4C5
 RoboticArm\App.cs: C31ECA7BACB8C9B7A474330157A29188
 RoboticArm\Package.appxmanifest: 455AF4EE8E990C99DBB03A5DB16E9B80
 RoboticArm\project.json: 1D02BC64BAC0D041019673A1C4C51737
-RoboticArm\RoboticArm.csproj: B4C0684FE11989A376B61299612A90A3
+RoboticArm\RoboticArm.csproj: D7762D917DB7978084E1434DB564996E
 RoboticArm\RoboticArm.csproj.user: modified
 RoboticArm\Assets\SplashScreen.scale-200.png: A85C1D7624B6902CF8CEBD6F0200A826
 RoboticArm\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084

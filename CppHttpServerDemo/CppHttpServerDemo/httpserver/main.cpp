@@ -43,7 +43,8 @@ void sendMessageToMachine(string body) {
 	string value = body.substr(index+1, body.length()-1);
 	std::cout << value << endl;
 	string axis = value.substr(0,1);
-	string stopOperation = axis.append("ͣ");
+	string stopOperation =  string(axis);
+	stopOperation.append("ͣ");
 	char* operation = (char*)value.data();
 	
 	std::cout << "axis: " << axis << " operation: " << operation << " stop :" << stopOperation <<endl;
@@ -81,7 +82,7 @@ void startDrill() {
 	ShowWindow(pDSsubWnd, 9);
 	HWND pDSsssubWnd = FindWindowEx(pDSsubWnd, NULL, "WindowsForms10.BUTTON.app.0.378734a", "o08");
 	SendMessage(pDSsssubWnd, BM_CLICK, 0, 0);
-	std:cout << "drill start" << endl;
+	std::cout << "drill start" << endl;
 }
 
 int main(int argc, char *argv[]) 

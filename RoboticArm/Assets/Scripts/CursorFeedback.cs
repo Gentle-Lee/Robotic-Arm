@@ -135,7 +135,6 @@ namespace Academy
         {
             if (scrollDetectedGameObject == null)
             {
-                Debug.Log("scroll object == null");
                 return;
             }
 
@@ -147,13 +146,11 @@ namespace Academy
             }
             if (IsZoomEnabled)
             {
-                Debug.Log("zoom enabled");
                 scrollDetectedGameObject.SetActive(false);
                 zoomDetectedGameObject.SetActive(true);
             }
             else
             {
-                Debug.Log("scroll enabled");
                 scrollDetectedGameObject.SetActive(true);
                 zoomDetectedGameObject.SetActive(false);
             }

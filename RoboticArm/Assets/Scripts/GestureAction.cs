@@ -2,7 +2,10 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using HoloToolkit.Unity.InputModule;
+using SimpleHTTP;
+using System.Collections;
 using UnityEngine;
+
 
 namespace Academy
 {
@@ -18,6 +21,7 @@ namespace Academy
 
         private bool isNavigationEnabled = true;
         private bool isZoomEnabled = false;
+        private bool isOperationEnabled = false;
         public bool IsZoomEnabled
         {
             get { return isZoomEnabled; }
@@ -38,8 +42,7 @@ namespace Academy
 
         void INavigationHandler.OnNavigationUpdated(NavigationEventData eventData)
         {
-            
-            if (isNavigationEnabled)
+            if (isNavigationEnabled && !isOperationEnabled)
             {
                 if (!isZoomEnabled)
                 {
@@ -69,6 +72,39 @@ namespace Academy
                     }
                 }
             }
+            //if (isOperationEnabled)
+            //{
+            //    const string postURL = "127.0.0.1:7999/api/movement";
+            //    float offsetX = eventData.NormalizedOffset.x;
+            //    float offsetY = eventData.NormalizedOffset.y;
+            //    float offsetZ = eventData.NormalizedOffset.z;
+            //    if (offsetX > offsetY && offsetX > offsetZ ){
+            //        Debug.Log("x => " + offsetX);
+            //        postMessage(postURL, offsetX > 0 ? "operation=x+" : "operation=x-", Encoding.UTF8);
+            //    }else if (offsetY > offsetX && offsetY > offsetZ){
+            //        Debug.Log("y => " + offsetY);
+            //        postMessage(postURL, offsetY > 0 ? "operation=y+" : "operation=y-", Encoding.UTF8);
+            //    }else if (offsetZ > offsetX && offsetZ > offsetY){
+            //        Debug.Log("z => " + offsetZ);
+            //        postMessage(postURL, offsetY > 0 ? "operation=z+" : "operation=z-", Encoding.UTF8);
+            //    }
+            //}
+        }
+        IEnumerator Post()
+        {
+            // Let's say that this the object you want to create
+            string formData = "operation=y+";
+                               
+            // Create the request object and use the helper function `RequestBody` to create a body from JSON
+            Request request = new Request("http://172.29.39.199:7999/api/movement")
+                .AddHeader("Content-Type", "application/x-www-form-urlencoded")
+                .Post(RequestBody.From(formData));
+
+            // Instantiate the client
+            Client http = new Client();
+            // Send the request
+            yield return http.Send(request);
+            
         }
 
         void INavigationHandler.OnNavigationCompleted(NavigationEventData eventData)
@@ -83,7 +119,7 @@ namespace Academy
 
         void IManipulationHandler.OnManipulationStarted(ManipulationEventData eventData)
         {
-            if (!isNavigationEnabled && !isZoomEnabled)
+            if (!isNavigationEnabled && !isZoomEnabled && !isOperationEnabled)
             {
                 InputManager.Instance.PushModalInputHandler(gameObject);
 
@@ -93,7 +129,7 @@ namespace Academy
 
         void IManipulationHandler.OnManipulationUpdated(ManipulationEventData eventData)
         {
-            if (!isNavigationEnabled && !isZoomEnabled)
+            if (!isNavigationEnabled && !isZoomEnabled && !isOperationEnabled)
             {
                 /* TODO: DEVELOPER CODING EXERCISE 4.a */
 
@@ -101,6 +137,7 @@ namespace Academy
                 Debug.Log("move");
                 transform.position = manipulationOriginalPosition + eventData.CumulativeDelta;
             }
+           
         }
 
         void IManipulationHandler.OnManipulationCompleted(ManipulationEventData eventData)
@@ -120,16 +157,24 @@ namespace Academy
             {
                 isZoomEnabled = false;
                 isNavigationEnabled = false;
+                isOperationEnabled = false;
             }
             else if (eventData.RecognizedText.ToLower().Equals("rotate"))
             {
                 isNavigationEnabled = true;
                 isZoomEnabled = false;
+                isOperationEnabled = false;
             }
             else if (eventData.RecognizedText.ToLower().Equals("expand"))
             {
                 isZoomEnabled = true;
                 isNavigationEnabled = true;
+                isOperationEnabled = false;
+            }
+            else if (eventData.RecognizedText.ToLower().Equals("registration"))
+            {
+                isOperationEnabled = true;
+                StartCoroutine(Post());
             }
             else
             {

@@ -215,6 +215,7 @@ f133614bc5eb7ed8e7fb906136387ff4 Assembly-CSharp.dll:HoloToolkit.Unity.SpatialMa
 c484ca1fbf03cde4786f8ffa4334186d Assembly-CSharp.dll:HoloToolkit.Unity.InputModule.InteractiveMeshCursor
 7839428c9fed18db459bc27d6140e40d Assembly-CSharp.dll:HoloToolkit.UI.Keyboard.Keyboard
 34537226a0044bc781b1d01db7942dfe Assembly-CSharp.dll:HoloToolkit.Unity.InputModule.Utilities.Interactions.TwoHandManipulatable
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Main
 cade32f28e21a5f2370dd82c3d56c28c Assembly-CSharp.dll:HoloToolkit.Unity.SceneLauncherButton
 d3a0b520109552cd3ebbb5a8d5e7dae1 Assembly-CSharp.dll:HoloToolkit.Unity.UX.Duplicator
 b48597bac756ea53cecb08fc53de8b9f Assembly-CSharp.dll:HoloToolkit.Unity.Buttons.ButtonTextProfile
